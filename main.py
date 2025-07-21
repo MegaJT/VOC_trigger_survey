@@ -35,7 +35,7 @@ def trigger_survey(request: TriggerRequest):
         message_text = (
             f"Hi {request.customer_name}, thank you for using our service. "
             f"Please share your feedback: {TYPEFORM_SURVEY_LINK}"
-            f"?cust_name={request.customer_name}&mobile={request.mobile_number}"
+            f"#first_name={request.customer_name}&phone_number={request.mobile_number}"
         )
 
         whatsapp_to = f"whatsapp:{request.mobile_number}"
