@@ -66,5 +66,6 @@ def trigger_survey(request: TriggerRequest):
                 }
 
     except Exception as e:
-        logging.error(f"Failed to send message: {e}")
-        raise HTTPException(status_code=500, detail="Message sending failed.")
+        logging.error(f"Failed to send message: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+
